@@ -26,7 +26,7 @@ function init(tickets = []) {
       </div>
       <div class="side back">
         <div class="question">${t.q}</div>
-        <button class="lamp-btn" onclick="showAns(this)">💡 Подсказка</button>
+        <button class="lamp-btn" onclick="showAns(this)"> <i class="fa-solid fa-lightbulb"></i> Подсказка</button>
         <div class="answer">${t.a}</div>
       </div>
     </div>
@@ -39,7 +39,7 @@ function init(tickets = []) {
 function showAns(btn) {
   const ans = btn.nextElementSibling;
   ans.classList.toggle('show');
-  btn.innerText = ans.classList.contains('show') ? '❌ Скрыть' : '💡 Подсказка';
+  btn.innerHTML = ans.classList.contains('show') ? '<i class="fa-solid fa-xmark"></i> Скрыть' : '<i class="fa-solid fa-lightbulb"></i> Подсказка';
 }
 
 
