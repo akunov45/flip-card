@@ -17,6 +17,188 @@ body {
   margin: 0;
 }
 
+.modal {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  /* Ограничение ширины */
+  padding: 40px;
+  border-radius: 20px;
+  /* Сильно скругленные углы */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  /* Мягкая тень */
+  text-align: center;
+  box-sizing: border-box;
+  /* Чтобы padding не влиял на ширину */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Легкий эффект при наведении на само окно (опционально) */
+.modal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Заголовок --- */
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* --- Подзаголовок --- */
+.modal p {
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* --- Группа ввода (Inpuy Group) --- */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Иконки внутри полей ввода */
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Поля ввода (Inputs) */
+.modal input[type="email"],
+.modal input[type="password"] {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  /* Большой padding слева для иконки */
+  border: 2px solid #e1e1e1;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  /* Важно! */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafafa;
+}
+
+/* Эффекты при фокусе на поле ввода */
+.modal input:focus {
+  outline: none;
+  border-color: #007bff;
+  /* Основной синий цвет */
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+/* Изменение цвета иконки при фокусе */
+.modal input:focus+.input-icon {
+  color: #007bff;
+}
+
+/* --- Блок "Запомнить" и "Забыли пароль" --- */
+.action-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+}
+
+.remember-me input {
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #007bff;
+  /* Цвет чекбокса в современных браузерах */
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* --- Кнопка входа (Sign In Button) --- */
+.sign-in-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.sign-in-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.sign-in-btn:active {
+  transform: scale(0.98);
+  /* Эффект нажатия */
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Ссылка на регистрацию --- */
+.modal .footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #777;
+}
+
+.modal .footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.modal .footer a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* --- Адаптивность для мобильных устройств --- */
+@media (max-width: 480px) {
+  .modal {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  .modal h2 {
+    font-size: 24px;
+  }
+
+  .action-block {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
 .header {
   text-align: center;
   margin-bottom: 30px;
